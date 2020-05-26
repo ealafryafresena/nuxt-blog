@@ -43,23 +43,45 @@ export default {
    ** Nuxt.js modules
    */
   modules: [],
+  router: {
+    linkActiveClass: 'active-link'
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    options: {
+      customProperties: true
+    },
     theme: {
-      dark: true,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
+        light: {
+          primaryBase: '#3F51B5',
+          primaryLight1: '#5C6BC0',
+          primaryLight2: '#7986CB',
+          primaryLight3: '#9FA8DA',
+          primaryDark1: '#3949AB',
+          primaryDark2: '#303F9F',
+          primaryDark3: '#283593',
+          greyBase: '#9e9e9e',
+          greyLight1: '#bdbdbd',
+          greyLight2: '#e0e0e0',
+          greyLight3: '#eeeeee',
+          greyLight4: '#f5f5f5',
+          greyLight5: '#fafafa',
+          greyDark1: '#757575',
+          greyDark2: '#616161',
+          greyDark3: '#424242',
+          greyDark4: '#212121',
+          contentLight: '#ffffff',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          error: colors.deepOrange.accent4
         }
       }
     }

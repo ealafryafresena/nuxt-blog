@@ -1,4 +1,4 @@
-# nuxt-blog
+# WIP: nuxt-blog
 
 > A Blog made with Nuxt
 
