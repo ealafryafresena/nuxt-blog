@@ -1,5 +1,7 @@
 <template>
-  <CategoryHeadline class="mt-12">About</CategoryHeadline>
+  <div>
+    <CategoryHeadline class="mt-12">About</CategoryHeadline>
+  </div>
 </template>
 
 <script>

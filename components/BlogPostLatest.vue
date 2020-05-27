@@ -2,18 +2,17 @@
   <div class="blog-post-latest">
     <div class="blog-post-latest-container">
       <div class="blog-post-latest-img">
-        <img src="/images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg" />
+        <img :src="post.image" />
       </div>
       <div class="blog-post-latest-content">
-        <p class="blog-post-latest-published caption mb-1">05-18-2020</p>
+        <p class="blog-post-latest-published caption mb-1">
+          {{ post.published }}
+        </p>
         <h2 class="display-1 mb-3">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+          {{ post.title }}
         </h2>
         <p class="blog-post-latest-teaser title">
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est.
+          {{ post.teaser }}
         </p>
       </div>
     </div>
@@ -21,7 +20,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

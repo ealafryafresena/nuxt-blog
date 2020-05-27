@@ -2,18 +2,18 @@
   <div class="blog-post-item mb-6">
     <div class="blog-post-item-container">
       <div class="blog-post-item-img">
-        <img src="/images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg" />
+        <img :src="post.image" />
       </div>
       <div class="blog-post-item-content">
         <div class="blog-post-item-text">
-          <p class="blog-post-item-published caption mb-1">05-18-2020</p>
+          <p class="blog-post-item-published caption mb-1">
+            {{ post.published }}
+          </p>
           <h2 class="headline mb-2">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr
+            {{ post.title }}
           </h2>
           <p class="blog-post-item-teaser body-1">
-            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-            amet.
+            {{ post.teaser }}
           </p>
         </div>
       </div>
@@ -22,7 +22,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    post: {
+      type: Object,
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

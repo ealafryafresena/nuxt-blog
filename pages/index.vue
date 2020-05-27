@@ -1,18 +1,25 @@
 <template>
   <div class="blog-posts-container">
     <CategoryHeadline class="mt-12">Latest Post</CategoryHeadline>
-    <div class="blog-posts-link" @click="navigateToPost">
-      <BlogPostLatest />
+    <div class="blog-posts-link">
+      <div
+        v-for="post in posts.slice(0, 1)"
+        :key="post.id"
+        class="blog-posts-link"
+        @click="navigateToPost(post.path)"
+      >
+        <BlogPostLatest :post="post" />
+      </div>
     </div>
     <CategoryHeadline class="mt-12">More Posts</CategoryHeadline>
     <div class="blog-posts-list">
       <div
-        v-for="(item, index) in samplePosts"
-        :key="index"
+        v-for="post in posts.slice(1, posts.length)"
+        :key="post.id"
         class="blog-posts-link"
-        @click="navigateToPost"
+        @click="navigateToPost(post.path)"
       >
-        <BlogPostItem />
+        <BlogPostItem :post="post" />
       </div>
     </div>
   </div>
@@ -29,14 +36,26 @@ export default {
     BlogPostLatest,
     BlogPostItem
   },
-  data() {
+  async asyncData({ $content, params }) {
+    const posts = await $content('posts')
+      .only([
+        'path',
+        'slug',
+        'title',
+        'teaser',
+        'createdAt',
+        'image',
+        'published'
+      ])
+      .sortBy('createdAt', 'desc')
+      .fetch()
     return {
-      samplePosts: [1, 2, 3, 4, 5]
+      posts
     }
   },
   methods: {
-    navigateToPost() {
-      this.$router.push({ path: '/' })
+    navigateToPost(path) {
+      this.$router.push({ path })
     }
   }
 }
