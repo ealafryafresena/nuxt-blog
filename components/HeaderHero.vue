@@ -3,19 +3,32 @@
     <div
       class="header-hero bg-secondary text-light d-flex justify-content-center align-items-center text-center"
     >
-      <img src="/images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg" />
+      <img :src="heroImage" />
       <div class="header-hero-overlay">
-        <h1 class="display-3">Lorem ipsum sit</h1>
+        <h1 class="display-2">
+          <slot></slot>
+        </h1>
+        <figcaption class="header-hero-caption">
+          {{ heroCaption }}
+        </figcaption>
       </div>
     </div>
-    <figcaption class="header-hero-caption">
-      Lorem ipsum dolor sit amet
-    </figcaption>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    heroImage: {
+      type: String,
+      required: true
+    },
+    heroCaption: {
+      type: String,
+      required: true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -62,9 +75,12 @@ export default {}
   }
 
   &-caption {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    right: 20px;
+    color: $greyLight2;
     font-size: 10px;
-    text-align: right;
-    padding-right: 20px;
   }
 }
 </style>
