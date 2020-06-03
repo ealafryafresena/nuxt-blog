@@ -1,20 +1,19 @@
 <template>
-  <v-footer color="greyDark2" padless>
+  <v-footer color="grey lighten-3" padless>
     <div class="footer-nav d-flex justify-center py-2">
       <v-btn
         v-for="page in pages"
         :key="page.title"
         :to="page.url"
         link
-        color="white"
+        color="grey darken-3"
         text
-        rounded
-        class="my-2"
+        class="text-lowercase my-2"
       >
         {{ page.title }}
       </v-btn>
     </div>
-    <div class="footer-nav greyDark3 py-6 text-center white--text">
+    <div class="footer-nav grey lighten-3 py-6 text-center">
       {{ new Date().getFullYear() }} | <strong>{{ mainTitle }}</strong>
     </div>
   </v-footer>

@@ -1,43 +1,32 @@
 <template>
   <v-app dark>
-    <TopNav :pages="pages" :main-title="mainTitle" />
-    <HeaderHero :hero-image="heroImage" :hero-caption="heroCaption">
-      A Blog Made with NuxtJS
-    </HeaderHero>
-    <v-content class="mb-12">
-      <v-container>
-        <nuxt />
-      </v-container>
+    <MainNav :pages="pages" :main-title="mainTitle" />
+    <v-content>
+      <nuxt />
+      <PageFooter class="mt-12" :pages="pages" :main-title="mainTitle" />
     </v-content>
-    <PageFooter class="mt-12" :pages="pages" :main-title="mainTitle" />
   </v-app>
 </template>
 
 <script>
-import HeaderHero from '@/components/HeaderHero.vue'
-import TopNav from '@/components/TopNav.vue'
+import MainNav from '@/components/MainNav.vue'
 import PageFooter from '@/components/PageFooter.vue'
 
 export default {
   components: {
-    HeaderHero,
-    TopNav,
+    MainNav,
     PageFooter
   },
   data() {
     return {
       mainTitle: 'Eala Frya Fresena',
-      heroImage: '/images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
-      heroCaption: 'Photo by Patrick Tomasso',
       pages: [
         {
-          title: 'Blog',
-          icon: 'mdi-post',
+          title: '/blog',
           url: '/'
         },
         {
-          title: 'About',
-          icon: 'mdi-information',
+          title: '/about',
           url: '/about'
         }
       ]

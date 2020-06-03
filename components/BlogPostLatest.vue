@@ -5,14 +5,14 @@
         <img :src="post.image" />
       </div>
       <div class="blog-post-latest-content">
-        <p class="blog-post-latest-published caption mb-1">
+        <p class="blog-post-latest-published caption mb-2">
           {{ post.published }}
         </p>
-        <h2 class="display-1 mb-3">
+        <h3 class="mb-3">
           {{ post.title }}
-        </h2>
-        <p class="blog-post-latest-teaser title">
-          {{ post.teaser }}
+        </h3>
+        <p class="blog-post-latest-subline">
+          {{ post.subline }}
         </p>
       </div>
     </div>
@@ -34,19 +34,18 @@ export default {
 .blog-post-latest {
   width: 100%;
   height: 340px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 0px 4px 2px #f0f0f0;
 
   @media (max-width: 600px) {
     display: flex;
     flex-wrap: wrap;
-    height: 600px;
-  }
-
-  h2 {
-    color: $greyDark4;
+    height: 660px;
   }
 
   &-published {
-    color: $primaryBase;
+    color: $primary;
   }
 
   &-container {
@@ -60,10 +59,10 @@ export default {
   &-img {
     width: 44%;
     height: 340px;
-    background-color: $primaryBase;
+    background-color: $primaryDark4;
 
     @media (max-width: 600px) {
-      height: 180px;
+      height: 240px;
       width: 100%;
     }
 
@@ -71,9 +70,14 @@ export default {
       object-fit: cover;
       width: 100%;
       height: 340px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
 
       @media (max-width: 600px) {
-        height: 180px;
+        height: 240px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
       }
     }
   }
@@ -82,25 +86,21 @@ export default {
     width: 56%;
     height: 340px;
     padding: 25px;
-    border-top: $primaryLight5 solid 3px;
-    border-right: $primaryLight5 solid 3px;
-    border-bottom: $primaryLight5 solid 3px;
 
     @media (max-width: 600px) {
       width: 100%;
       height: 420px;
-      border-top: none;
-      border-left: $primaryLight5 solid 3px;
     }
   }
 
-  &-teaser {
-    color: $greyDark2;
-    --lh: 2rem;
+  &-subline {
+    color: rgba(0, 0, 0, 0.6);
+    --lh: 1.4rem;
     line-height: var(--lh);
     --max-lines: 4;
     max-height: calc(var(--lh) * var(--max-lines));
     overflow: hidden;
+    font-size: 20px;
   }
 }
 </style>

@@ -1,9 +1,9 @@
 ---
-title: Stet clita kasd gubergren, no sea takimata
-subline: Stet clita kasd gubergren, no sea takimata sanctus est ea rebum clita takimata sanctus est.
-image: /images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg
-published: 05/25/2020
-caption: Photo by Adi Goldstein on Unsplash
+title: Sea takimata sanctus est Lorem ipsum dolor sit amet
+subline: Tempor invidunt ut labore et dolore magna aliquyam eos et accusam et justo duo dolores et ea rebum.
+image: /images/max-duzij-qAjJk-un3BI-unsplash.jpg
+published: 05/30/2020
+caption: Photo by Max Duzij on Unsplash
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -12,19 +12,8 @@ caption: Photo by Adi Goldstein on Unsplash
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-```js
-export default {
-  components: {
-    HeaderHero
-  },
-  async asyncData({ $content, params }) {
-    const post = await $content(`posts/${params.slug}`).fetch()
-    return {
-      post
-    }
-  }
-}
-```
+![Example Image](/images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg 'Example Image')
+_Lorem ipsum dolor sit amet consetetur sadipscing elitr, sed diam nonumy eirmod_
 
 ### Stempor invidunt ut labore
 

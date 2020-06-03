@@ -4,14 +4,12 @@
       class="header-hero bg-secondary text-light d-flex justify-content-center align-items-center text-center"
     >
       <img :src="heroImage" />
-      <div class="header-hero-overlay">
-        <h1 class="display-2">
-          <slot></slot>
-        </h1>
-        <figcaption class="header-hero-caption">
-          {{ heroCaption }}
-        </figcaption>
-      </div>
+      <h1 class="display-2">
+        <slot></slot>
+      </h1>
+      <figcaption class="header-hero-caption">
+        {{ heroCaption }}
+      </figcaption>
     </div>
   </div>
 </template>
@@ -34,9 +32,8 @@ export default {
 <style lang="scss" scoped>
 .header-hero {
   width: 100%;
-  height: 50vh;
+  height: 55vh;
   position: relative;
-  margin-top: 64px;
 
   @media (max-width: 800px) {
     margin-top: 56px;
@@ -46,19 +43,7 @@ export default {
     object-fit: cover;
     width: 100%;
     display: block;
-    height: 50vh;
-  }
-
-  &-overlay {
-    position: absolute;
-    margin: 0;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: 55vh;
   }
 
   h1 {
@@ -79,7 +64,7 @@ export default {
     z-index: 3;
     bottom: 0;
     right: 20px;
-    color: $greyLight2;
+    color: $primaryLight2;
     font-size: 10px;
   }
 }

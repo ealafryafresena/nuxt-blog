@@ -1,56 +1,71 @@
 <template>
-  <div class="blog-posts-container">
-    <CategoryHeadline class="mt-12">Latest Post</CategoryHeadline>
-    <div class="blog-posts-link">
-      <div
-        v-for="post in posts.slice(0, 1)"
-        :key="post.id"
-        class="blog-posts-link"
-        @click="navigateToPost(post.path)"
-      >
-        <BlogPostLatest :post="post" />
+  <div>
+    <HeaderHero :hero-image="heroImage" :hero-caption="heroCaption">
+      A Blog Made with NuxtJS
+    </HeaderHero>
+    <v-container>
+      <div class="blog-posts-container mx-auto">
+        <HeadingTitle class="mt-12">Latest Post</HeadingTitle>
+        <div class="blog-posts-link">
+          <div
+            v-for="post in posts.slice(0, 1)"
+            :key="post.id"
+            class="blog-posts-link"
+            @click="navigateToPost(post.path)"
+          >
+            <BlogPostLatest :post="post" />
+          </div>
+        </div>
+        <HeadingTitle class="mt-12">More Posts</HeadingTitle>
+        <div class="blog-posts-list">
+          <div
+            v-for="post in posts.slice(1, posts.length)"
+            :key="post.id"
+            class="blog-posts-link"
+            @click="navigateToPost(post.path)"
+          >
+            <BlogPostItem :post="post" />
+          </div>
+        </div>
       </div>
-    </div>
-    <CategoryHeadline class="mt-12">More Posts</CategoryHeadline>
-    <div class="blog-posts-list">
-      <div
-        v-for="post in posts.slice(1, posts.length)"
-        :key="post.id"
-        class="blog-posts-link"
-        @click="navigateToPost(post.path)"
-      >
-        <BlogPostItem :post="post" />
-      </div>
-    </div>
+    </v-container>
   </div>
 </template>
 
 <script>
-import CategoryHeadline from '@/components/CategoryHeadline.vue'
+import HeaderHero from '@/components/HeaderHero.vue'
+import HeadingTitle from '@/components/HeadingTitle.vue'
 import BlogPostLatest from '@/components/BlogPostLatest.vue'
 import BlogPostItem from '@/components/BlogPostItem.vue'
 
 export default {
   components: {
-    CategoryHeadline,
+    HeaderHero,
+    HeadingTitle,
     BlogPostLatest,
     BlogPostItem
   },
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const posts = await $content('posts')
       .only([
         'path',
         'slug',
         'title',
-        'teaser',
-        'createdAt',
+        'subline',
         'image',
-        'published'
+        'published',
+        'createdAt'
       ])
       .sortBy('createdAt', 'desc')
       .fetch()
     return {
       posts
+    }
+  },
+  data() {
+    return {
+      heroImage: '/images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
+      heroCaption: 'Photo by Patrick Tomasso on Unsplash'
     }
   },
   methods: {
@@ -63,12 +78,8 @@ export default {
 
 <style lang="scss">
 .blog-posts {
-  max-width: 800px;
-  margin: 0 auto;
-
   &-container {
     max-width: 800px;
-    margin: 0 auto;
   }
 
   &-list {
@@ -86,7 +97,7 @@ export default {
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.01, 1.01);
+      transform: scale(1.0075, 1.0075);
     }
   }
 }

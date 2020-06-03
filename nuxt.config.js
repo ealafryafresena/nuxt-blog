@@ -17,7 +17,19 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -26,7 +38,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/css/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -59,24 +71,7 @@ export default {
     theme: {
       themes: {
         light: {
-          primaryBase: '#3F51B5',
-          primaryLight1: '#5C6BC0',
-          primaryLight2: '#7986CB',
-          primaryLight3: '#9FA8DA',
-          primaryDark1: '#3949AB',
-          primaryDark2: '#303F9F',
-          primaryDark3: '#283593',
-          greyBase: '#9e9e9e',
-          greyLight1: '#bdbdbd',
-          greyLight2: '#e0e0e0',
-          greyLight3: '#eeeeee',
-          greyLight4: '#f5f5f5',
-          greyLight5: '#fafafa',
-          greyDark1: '#757575',
-          greyDark2: '#616161',
-          greyDark3: '#424242',
-          greyDark4: '#212121',
-          contentLight: '#ffffff',
+          primary: colors.grey.base,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

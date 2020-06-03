@@ -1,5 +1,5 @@
 <template>
-  <h2 class="category-headline display-1 mb-8">
+  <h2 class="heading-title mb-8">
     <slot></slot>
   </h2>
 </template>
@@ -9,17 +9,16 @@ export default {}
 </script>
 
 <style lang="scss" scoped>
-.category-headline {
+.heading-title {
   &:after {
     content: '';
     display: block;
-    height: 8px;
+    height: 6px;
     width: 100%;
-    background: rgb(26, 35, 126);
     background: linear-gradient(
       90deg,
-      rgba(26, 35, 126, 1) 0%,
-      rgba(232, 234, 246, 1) 100%
+      rgba(60, 60, 60, 1) 0%,
+      rgba(241, 241, 241, 1) 100%
     );
     margin: 15px 0;
   }

@@ -1,19 +1,16 @@
 <template>
-  <div class="blog-post-item mb-6">
-    <div class="blog-post-item-container">
-      <div class="blog-post-item-img">
+  <div class="blog-post-featured mb-6">
+    <div class="blog-post-featured-container">
+      <div class="blog-post-featured-img">
         <img :src="post.image" />
       </div>
-      <div class="blog-post-item-content">
-        <p class="blog-post-item-published caption mb-2">
+      <div class="blog-post-featured-content">
+        <p class="blog-post-featured-published caption mb-2">
           {{ post.published }}
         </p>
-        <h4 class="mb-3">
+        <h5 class="mb-3">
           {{ post.title }}
-        </h4>
-        <p class="blog-post-item-subline subtitle-1">
-          {{ post.subline }}
-        </p>
+        </h5>
       </div>
     </div>
   </div>
@@ -31,26 +28,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.blog-post-item {
-  width: 392px;
-  min-height: 540px;
+.blog-post-featured {
+  width: 252px;
+  min-height: 300px;
   border-radius: 4px;
   background-color: white;
   box-shadow: 0px 0px 4px 2px #f0f0f0;
 
   @media (max-width: 800px) {
-    width: 364px;
+    width: 240px;
   }
 
   &-img {
     width: 100%;
-    height: 240px;
+    height: 120px;
     background-color: $primaryDark4;
 
     img {
       object-fit: cover;
       width: 100%;
-      height: 240px;
+      height: 120px;
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
     }
@@ -62,17 +59,8 @@ export default {
 
   &-content {
     width: 100%;
-    min-height: 300px;
+    min-height: 180px;
     padding: 15px;
-  }
-
-  &-subline {
-    color: rgba(0, 0, 0, 0.6);
-    --lh: 1.4rem;
-    line-height: var(--lh);
-    --max-lines: 4;
-    max-height: calc(var(--lh) * var(--max-lines));
-    overflow: hidden;
   }
 }
 </style>
