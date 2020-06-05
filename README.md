@@ -19,4 +19,8 @@ $ npm run start
 $ npm run generate
 ```
 
+## Demo on Netlify
+
+[Demo](https://optimistic-goldstine-506420.netlify.app/ 'Demo')
+
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
