@@ -11,9 +11,10 @@
             v-for="post in posts.slice(0, 1)"
             :key="post.id"
             class="blog-posts-link"
-            @click="navigateToPost(post.path)"
           >
-            <BlogPostLatest :post="post" />
+            <nuxt-link :to="post.path">
+              <BlogPostLatest :post="post" />
+            </nuxt-link>
           </div>
         </div>
         <HeadingTitle class="mt-12">More Posts</HeadingTitle>
@@ -22,9 +23,10 @@
             v-for="post in posts.slice(1, posts.length)"
             :key="post.id"
             class="blog-posts-link"
-            @click="navigateToPost(post.path)"
           >
-            <BlogPostItem :post="post" />
+            <nuxt-link :to="`${post.path}`">
+              <BlogPostItem :post="post" />
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -64,13 +66,8 @@ export default {
   },
   data() {
     return {
-      heroImage: '/images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
+      heroImage: 'images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
       heroCaption: 'Photo by Patrick Tomasso on Unsplash'
-    }
-  },
-  methods: {
-    navigateToPost(path) {
-      this.$router.push({ path })
     }
   }
 }
@@ -98,6 +95,10 @@ export default {
     &:hover {
       cursor: pointer;
       transform: scale(1.0075, 1.0075);
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }

@@ -5,8 +5,8 @@
       <v-toolbar-title
         ><nuxt-link class="main-nav-branding title" :to="pages[0].url">
           {{ mainTitle }}
-        </nuxt-link></v-toolbar-title
-      >
+        </nuxt-link>
+      </v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -15,7 +15,6 @@
       app
       class="v-navigation-drawer--fixed"
       hide-overlay
-      absolute
       dark
       color="primary darken-4"
     >

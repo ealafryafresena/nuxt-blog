@@ -44,6 +44,18 @@ export default {
    */
   plugins: [],
   /*
+   ** Generate dynamnic  routes
+   */
+  generate: {
+    routes: [
+      '/posts/post-1',
+      '/posts/post-2',
+      '/posts/post-3',
+      '/posts/post-4',
+      '/posts/post-5'
+    ]
+  },
+  /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
