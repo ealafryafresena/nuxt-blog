@@ -1,7 +1,7 @@
 ---
 title: Stet clita kasd gubergren, no sea takimata
 subline: Stet clita kasd gubergren, no sea takimata sanctus est ea rebum clita takimata sanctus est.
-image: /images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg
+image: images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg
 published: 05/25/2020
 caption: Photo by Adi Goldstein on Unsplash
 ---

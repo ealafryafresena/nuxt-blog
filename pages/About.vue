@@ -70,7 +70,7 @@ export default {
   },
   data() {
     return {
-      heroImage: '/images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
+      heroImage: 'images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
       heroCaption: 'Photo by Patrick Tomasso on Unsplash'
     }
   }

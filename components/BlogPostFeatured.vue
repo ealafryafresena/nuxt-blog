@@ -2,7 +2,7 @@
   <div class="blog-post-featured mb-6">
     <div class="blog-post-featured-container">
       <div class="blog-post-featured-img">
-        <img :src="post.image" />
+        <img :src="`../../${post.image}`" />
       </div>
       <div class="blog-post-featured-content">
         <p class="blog-post-featured-published caption mb-2">

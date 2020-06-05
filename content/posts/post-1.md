@@ -1,7 +1,7 @@
 ---
 title: Lorem ipsum dolor sit amet, consetetur sadipscing
 subline: Vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd duo dolores.
-image: /images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg
+image: images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg
 published: 05/24/2020
 caption: Photo Kevin Ku on Unsplash
 ---

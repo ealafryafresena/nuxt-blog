@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderHero
-      :hero-image="post.image"
+      :hero-image="`../../${post.image}`"
       :hero-caption="post.caption"
     ></HeaderHero>
     <v-container>
@@ -19,9 +19,10 @@
             v-for="post in postsFeatured"
             :key="post.id"
             class="blog-post-link"
-            @click="navigateToPost(post.path)"
           >
-            <BlogPostFeatured :post="post" />
+            <nuxt-link :to="post.path">
+              <BlogPostFeatured :post="post" />
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -58,11 +59,6 @@ export default {
       postsFeatured,
       post
     }
-  },
-  methods: {
-    navigateToPost(path) {
-      this.$router.push({ path })
-    }
   }
 }
 </script>
@@ -92,6 +88,10 @@ export default {
     &:hover {
       cursor: pointer;
       transform: scale(1.015, 1.015);
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }
