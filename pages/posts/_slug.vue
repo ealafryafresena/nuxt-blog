@@ -13,7 +13,18 @@
           {{ post.title }}
         </h2>
         <nuxt-content :document="post" />
-        <HeadingTitle class="mt-12">Featured Posts</HeadingTitle>
+        <div class="blog-post-prev-next d-flex justify-space-between py-8">
+          <nuxt-link v-if="prev" :to="prev.slug">
+            <v-icon>mdi-chevron-left</v-icon>
+            {{ prev.title }}
+          </nuxt-link>
+          <br />
+          <nuxt-link v-if="next" :to="next.slug">
+            {{ next.title }}
+            <v-icon>mdi-chevron-right</v-icon>
+          </nuxt-link>
+        </div>
+        <HeadingTitle class="mt-12 pt-12">Featured Posts</HeadingTitle>
         <div class="blog-post-list">
           <div
             v-for="post in postsFeatured"
@@ -46,6 +57,11 @@ export default {
     const posts = await $content('posts')
       .only(['path', 'title', 'image', 'published'])
       .fetch()
+    const [prev, next] = await $content('posts')
+      .only(['title', 'slug', 'published'])
+      .sortBy('published', 'desc')
+      .surround(params.slug, { before: 1, after: 1 })
+      .fetch()
 
     const filteredPosts = posts.filter((p) => p.title !== post.title)
     const randomPosts = filteredPosts.sort(() => {
@@ -57,7 +73,9 @@ export default {
 
     return {
       postsFeatured,
-      post
+      post,
+      prev,
+      next
     }
   }
 }
@@ -92,6 +110,20 @@ export default {
 
     a {
       text-decoration: none;
+    }
+  }
+
+  &-prev-next {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    a {
+      text-decoration: none;
+      padding: 0 5px;
+    }
+
+    :nth-of-type(2) {
+      text-align: right;
     }
   }
 }

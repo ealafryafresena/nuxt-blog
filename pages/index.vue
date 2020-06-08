@@ -58,7 +58,7 @@ export default {
         'published',
         'createdAt'
       ])
-      .sortBy('createdAt', 'desc')
+      .sortBy('published', 'desc')
       .fetch()
     return {
       posts
