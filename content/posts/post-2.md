@@ -4,6 +4,7 @@ subline: Stet clita kasd gubergren, no sea takimata sanctus est ea rebum clita t
 image: images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg
 published: 05/25/2020
 caption: Photo by Adi Goldstein on Unsplash
+category: Vue
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

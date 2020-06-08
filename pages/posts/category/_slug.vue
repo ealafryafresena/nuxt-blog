@@ -1,29 +1,13 @@
 <template>
   <div>
     <HeaderHero :hero-image="heroImage" :hero-caption="heroCaption">
-      A Blog Made with NuxtJS
+      Posts By Category {{ $route.params.slug }}
     </HeaderHero>
     <v-container>
       <div class="blog-posts-container mx-auto">
-        <HeadingTitle class="mt-12">Latest Post</HeadingTitle>
-        <div class="blog-posts-link">
-          <div
-            v-for="post in posts.slice(0, 1)"
-            :key="post.id"
-            class="blog-posts-link"
-          >
-            <nuxt-link :to="post.path">
-              <BlogPostLatest :post="post" />
-            </nuxt-link>
-          </div>
-        </div>
-        <HeadingTitle class="mt-12">More Posts</HeadingTitle>
+        <HeadingTitle class="mt-12">{{ $route.params.slug }}</HeadingTitle>
         <div class="blog-posts-list">
-          <div
-            v-for="post in posts.slice(1, posts.length)"
-            :key="post.id"
-            class="blog-posts-link"
-          >
+          <div v-for="post in posts" :key="post.id" class="blog-posts-link">
             <nuxt-link :to="`${post.path}`">
               <BlogPostItem :post="post" />
             </nuxt-link>
@@ -37,17 +21,15 @@
 <script>
 import HeaderHero from '@/components/HeaderHero.vue'
 import HeadingTitle from '@/components/HeadingTitle.vue'
-import BlogPostLatest from '@/components/BlogPostLatest.vue'
 import BlogPostItem from '@/components/BlogPostItem.vue'
 
 export default {
   components: {
     HeaderHero,
     HeadingTitle,
-    BlogPostLatest,
     BlogPostItem
   },
-  async asyncData({ $content }) {
+  async asyncData({ $content, params }) {
     const posts = await $content('posts')
       .only([
         'path',
@@ -59,6 +41,7 @@ export default {
         'category',
         'createdAt'
       ])
+      .where({ category: params.slug })
       .sortBy('published', 'desc')
       .fetch()
     return {
@@ -67,7 +50,7 @@ export default {
   },
   data() {
     return {
-      heroImage: 'images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
+      heroImage: '../../images/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg',
       heroCaption: 'Photo by Patrick Tomasso on Unsplash'
     }
   }

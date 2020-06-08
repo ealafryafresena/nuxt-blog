@@ -52,7 +52,10 @@ export default {
       '/posts/post-2',
       '/posts/post-3',
       '/posts/post-4',
-      '/posts/post-5'
+      '/posts/post-5',
+      '/posts/category/React',
+      '/posts/category/Vue',
+      '/posts/category/JavaScript'
     ]
   },
   /*

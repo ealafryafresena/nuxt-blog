@@ -5,9 +5,19 @@
         <img :src="post.image" />
       </div>
       <div class="blog-post-latest-content">
-        <p class="blog-post-latest-published caption mb-2">
-          {{ post.published }}
-        </p>
+        <div class="d-flex justify-space-between align-center">
+          <p class="blog-post-latest-published caption my-0">
+            {{ post.published }}
+          </p>
+          <nuxt-link
+            class="blog-post-latest-category"
+            :to="`/posts/category/${post.category}`"
+          >
+            <v-chip class="ma-2" color="primary" small>
+              {{ post.category }}
+            </v-chip>
+          </nuxt-link>
+        </div>
         <h3 class="mb-3">
           {{ post.title }}
         </h3>
@@ -46,6 +56,15 @@ export default {
 
   &-published {
     color: $primary;
+  }
+
+  &-category {
+    &:hover {
+      opacity: 0.7;
+    }
+    span {
+      cursor: pointer;
+    }
   }
 
   &-container {

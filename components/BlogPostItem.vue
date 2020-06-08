@@ -2,12 +2,22 @@
   <div class="blog-post-item mb-6">
     <div class="blog-post-item-container">
       <div class="blog-post-item-img">
-        <img :src="post.image" />
+        <img :src="`../../${post.image}`" />
       </div>
       <div class="blog-post-item-content">
-        <p class="blog-post-item-published caption mb-2">
-          {{ post.published }}
-        </p>
+        <div class="d-flex justify-space-between align-center">
+          <p class="blog-post-item-published caption my-0">
+            {{ post.published }}
+          </p>
+          <nuxt-link
+            class="blog-post-item-category"
+            :to="`/posts/category/${post.category}`"
+          >
+            <v-chip class="ma-2" color="primary" small>
+              {{ post.category }}
+            </v-chip>
+          </nuxt-link>
+        </div>
         <h4 class="mb-3">
           {{ post.title }}
         </h4>
@@ -58,6 +68,15 @@ export default {
 
   &-published {
     color: $primary;
+  }
+
+  &-category {
+    &:hover {
+      opacity: 0.7;
+    }
+    span {
+      cursor: pointer;
+    }
   }
 
   &-content {
