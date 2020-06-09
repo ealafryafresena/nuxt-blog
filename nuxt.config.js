@@ -44,21 +44,6 @@ export default {
    */
   plugins: [],
   /*
-   ** Generate dynamnic  routes
-   */
-  generate: {
-    routes: [
-      '/posts/post-1',
-      '/posts/post-2',
-      '/posts/post-3',
-      '/posts/post-4',
-      '/posts/post-5',
-      '/posts/category/React',
-      '/posts/category/Vue',
-      '/posts/category/JavaScript'
-    ]
-  },
-  /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
@@ -70,6 +55,24 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxt/content'],
+  /*
+   ** Generate dynamnic routes
+   */
+  generate: {
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const files = await $content('posts')
+        .only(['path', 'category'])
+        .fetch()
+      const categories = files.map((file) =>
+        file.path === '/index' ? '/' : `/posts/category/${file.category}`
+      )
+      const posts = files.map((file) =>
+        file.path === '/index' ? '/' : file.path
+      )
+      return [...posts, ...categories]
+    }
+  },
   router: {
     linkActiveClass: 'active-link'
   },
