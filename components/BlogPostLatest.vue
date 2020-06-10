@@ -13,7 +13,7 @@
             class="blog-post-latest-category"
             :to="`/posts/category/${post.category}`"
           >
-            <v-chip class="ma-2" color="primary" small>
+            <v-chip class="ma-2" color="primary" small label>
               {{ post.category }}
             </v-chip>
           </nuxt-link>
