@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .blog-post-featured {
   width: 252px;
-  min-height: 300px;
+  min-height: 320px;
   border-radius: 4px;
   background-color: white;
   box-shadow: 0px 0px 4px 2px #f0f0f0;
@@ -59,7 +59,7 @@ export default {
 
   &-content {
     width: 100%;
-    min-height: 180px;
+    min-height: 200px;
     padding: 15px;
   }
 }
