@@ -14,6 +14,7 @@
           <v-card-text
             >This project is made with
             <a href="https://nuxtjs.org/" target="_blank">NuxtJS</a>
+            and <a href="https://vuetifyjs.com/en/" target="_blank">Vuetify</a>
           </v-card-text>
         </v-card>
 
@@ -41,7 +42,12 @@
                 >
               </li>
               <li>
-                NuxtJS: <a href="https://nuxtjs.org/" target="_blank">NuxtJS</a>
+                Vue Framework:
+                <a href="https://nuxtjs.org/" target="_blank">NuxtJS</a>
+              </li>
+              <li>
+                UI Library:
+                <a href="https://vuetifyjs.com/en/" target="_blank">Vuetify</a>
               </li>
               <li>
                 CDN:
