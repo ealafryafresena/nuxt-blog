@@ -52,7 +52,7 @@
           :to="`/posts/category/${cat.category}`"
           color="primary"
           x-small
-          class="ma-2"
+          class="text-capitalize ma-2"
         >
           {{ cat.category }}
         </v-btn>
