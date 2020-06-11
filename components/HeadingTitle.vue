@@ -1,5 +1,5 @@
 <template>
-  <h2 class="heading-title mb-8">
+  <h2 class="heading-title mb-12">
     <slot></slot>
   </h2>
 </template>
@@ -13,7 +13,7 @@ export default {}
   &:after {
     content: '';
     display: block;
-    height: 6px;
+    height: 4px;
     width: 100%;
     background: linear-gradient(
       90deg,
