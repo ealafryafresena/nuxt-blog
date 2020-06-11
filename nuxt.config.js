@@ -59,6 +59,7 @@ export default {
    ** Generate dynamnic routes
    */
   generate: {
+    fallback: true,
     async routes() {
       const { $content } = require('@nuxt/content')
       const files = await $content('posts')
