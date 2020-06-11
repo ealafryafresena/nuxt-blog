@@ -1,11 +1,13 @@
 <template>
   <div>
     <HeaderHero :hero-image="heroImage" :hero-caption="heroCaption">
-      Posts By Category {{ $route.params.slug }}
+      Articles By Category: {{ $route.params.slug }}
     </HeaderHero>
     <v-container>
       <div class="blog-posts-container mx-auto">
-        <HeadingTitle class="mt-12">{{ $route.params.slug }}</HeadingTitle>
+        <HeadingTitle class="mt-12"
+          >{{ $route.params.slug }} Articles</HeadingTitle
+        >
         <div class="blog-posts-list">
           <div v-for="post in posts" :key="post.id" class="blog-posts-link">
             <nuxt-link :to="`${post.path}`">

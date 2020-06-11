@@ -5,7 +5,7 @@
     </HeaderHero>
     <v-container>
       <div class="blog-posts-container mx-auto">
-        <HeadingTitle class="mt-12">Latest Post</HeadingTitle>
+        <HeadingTitle class="mt-12">Latest Article</HeadingTitle>
         <div class="blog-posts-link">
           <div
             v-for="post in posts.slice(0, 1)"
@@ -17,7 +17,7 @@
             </nuxt-link>
           </div>
         </div>
-        <HeadingTitle class="mt-12">More Posts</HeadingTitle>
+        <HeadingTitle class="mt-12">More Articles</HeadingTitle>
         <div class="blog-posts-list">
           <div
             v-for="post in posts.slice(1, posts.length)"
