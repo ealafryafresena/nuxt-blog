@@ -34,6 +34,7 @@ export default {
   width: 100%;
   height: 55vh;
   position: relative;
+  background-color: $primaryDark4;
 
   @media (max-width: 800px) {
     margin-top: 56px;
