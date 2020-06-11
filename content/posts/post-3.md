@@ -4,7 +4,7 @@ subline: Lorem ipsum kasd gubergren, no sea takimata sanctus est sit amet, conse
 image: images/lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg
 published: 05/26/2020
 caption: Photo by Lorenzo Herrera on Unsplash
-category: JavaScript
+category: Ipsum
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

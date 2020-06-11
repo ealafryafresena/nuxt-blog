@@ -4,7 +4,7 @@ subline: Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
 image: images/fabian-grohs-XMFZqrGyV-Q-unsplash.jpg
 published: 05/29/2020
 caption: Photo by Fabian Grohs on Unsplash
-category: Vue
+category: Sanctus
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
