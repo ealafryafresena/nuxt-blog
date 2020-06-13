@@ -1,12 +1,12 @@
 <template>
   <div>
     <HeaderHero :hero-image="heroImage" :hero-caption="heroCaption">
-      Articles By Category: {{ $route.params.slug }}
+      Articles By Category
     </HeaderHero>
     <v-container>
       <div class="blog-posts-container mx-auto">
         <HeadingTitle class="mt-12"
-          >{{ $route.params.slug }} Articles</HeadingTitle
+          >{{ posts[0].category }} Articles</HeadingTitle
         >
         <div class="blog-posts-list">
           <div v-for="post in posts" :key="post.id" class="blog-posts-link">
@@ -46,9 +46,23 @@ export default {
       .where({ category: params.slug })
       .sortBy('published', 'desc')
       .fetch()
+
+    const allPosts = await $content('posts')
+      .only(['category'])
+      .fetch()
+
     return {
+      allPosts,
       posts
     }
+  },
+  async validate({ $content, params }) {
+    const allPosts = await $content('posts')
+      .only(['category'])
+      .fetch()
+
+    const categoryArr = allPosts.map((p) => p.category)
+    return categoryArr.includes(params.slug)
   },
   data() {
     return {
