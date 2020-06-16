@@ -1,10 +1,10 @@
 ---
-title: Sea takimata sanctus est Lorem ipsum dolor sit amet
+title: Sed diam nonumy eirmod tempor invidunt ut labore
 subline: Tempor invidunt ut labore et dolore magna aliquyam eos et accusam et justo duo dolores et ea rebum.
-image: images/max-duzij-qAjJk-un3BI-unsplash.jpg
-published: 05/30/2020
-caption: Photo by Max Duzij on Unsplash
-category: Lorem
+image: images/ilya-pavlov-OqtafYT5kTw-unsplash.jpg
+published: 06/11/2020
+caption: Photo by Ilya Pavlov
+category: Ipsum
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.

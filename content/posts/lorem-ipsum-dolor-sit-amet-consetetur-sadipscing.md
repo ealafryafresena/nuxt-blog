@@ -1,10 +1,10 @@
 ---
-title: Magna aliquyam erat, sed diam voluptua
-subline: Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
-image: images/fabian-grohs-XMFZqrGyV-Q-unsplash.jpg
-published: 05/29/2020
-caption: Photo by Fabian Grohs on Unsplash
-category: Sanctus
+title: Lorem ipsum dolor sit amet, consetetur sadipscing
+subline: Vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd duo dolores.
+image: images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg
+published: 06/12/2020
+caption: Photo Kevin Ku on Unsplash
+category: Sadipscing
 ---
 
 ##### At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -13,18 +13,17 @@ category: Sanctus
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-```js
-export default {
-  components: {
-    HeaderHero
-  },
-  async asyncData({ $content, params }) {
-    const post = await $content(`posts/${params.slug}`).fetch()
-    return {
-      post
-    }
-  }
-}
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1 class="heading">This is a Heading</h1>
+    <p class="paragraph">This is a Paragraph.</p>
+  </body>
+</html>
 ```
 
 ### Stempor invidunt ut labore

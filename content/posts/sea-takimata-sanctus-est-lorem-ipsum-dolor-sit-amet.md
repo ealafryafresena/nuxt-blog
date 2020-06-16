@@ -1,9 +1,9 @@
 ---
-title: Lorem ipsum dolor sit amet, consetetur sadipscing
-subline: Vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd duo dolores.
-image: images/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg
-published: 05/24/2020
-caption: Photo Kevin Ku on Unsplash
+title: Sea takimata sanctus est lorem ipsum dolor sit amet
+subline: Tempor invidunt ut labore et dolore magna aliquyam eos et accusam et justo duo dolores et ea rebum.
+image: images/max-duzij-qAjJk-un3BI-unsplash.jpg
+published: 06/16/2020
+caption: Photo by Max Duzij on Unsplash
 category: Lorem
 ---
 
@@ -13,18 +13,8 @@ category: Lorem
 
 Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-  </head>
-  <body>
-    <h1 class="heading">This is a Heading</h1>
-    <p class="paragraph">This is a Paragraph.</p>
-  </body>
-</html>
-```
+![Example Image](../../images/adi-goldstein-mDinBvq1Sfg-unsplash.jpg 'Example Image')
+_Lorem ipsum dolor sit amet consetetur sadipscing elitr, sed diam nonumy eirmod_
 
 ### Stempor invidunt ut labore
 
